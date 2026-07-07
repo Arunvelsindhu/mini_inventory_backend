@@ -49,7 +49,7 @@ const loginUser = async (req, res) => {
                     username: user.username,
                     role: user.role
                 },
-                "inventory_secret_key",
+                process.env.JWT_SECRET,
                 {
                     expiresIn: "1h"
                 }
@@ -81,7 +81,6 @@ const loginUser = async (req, res) => {
 
 };
 
-// ✅ IMPORTANT
 module.exports = {
     loginUser
 };
